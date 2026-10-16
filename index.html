@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=5">
 </head>
 <body>
   <header class="topbar">
@@ -19,15 +19,17 @@
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
     </nav>
+    <div class="xp" aria-hidden="true"><i></i></div>
   </header>
 
   <main id="top">
     <!-- HERO: character select screen -->
     <section class="hero">
+      <canvas class="stars" aria-hidden="true"></canvas>
       <p class="eyebrow">Player 1 has entered the game</p>
       <h1>Tanush<br><span>Pillai</span></h1>
-      <p class="tagline">Data science student by day. Gym rat by evening. Anime nerd by night.</p>
-      <div class="press-start">
+      <p class="tagline late">Data science student by day. Gym rat by evening. Anime nerd by night.</p>
+      <div class="press-start late">
         <a class="btn" href="#about">Press start ▸</a>
       </div>
     </section>
@@ -36,7 +38,7 @@
     <section id="about" class="panel">
       <h2><span class="num">01</span> Status screen</h2>
       <div class="about-grid">
-        <div class="about-text">
+        <div class="about-text reveal">
           <p>Hey, I'm Tanush. I study <strong>Data Science and AI</strong>, which mostly means I like turning messy data into something that actually works — route planners, prediction models, trading experiments.</p>
           <p>Outside of code I'm basically always moving. I play sports whenever I can, and I'm honestly obsessed with working out — a day without the gym feels like a missed save point.</p>
           <p>I also have a properly nerdy side. Anime is my thing, and you'll notice this whole site is built like an RPG status screen because of it.</p>
@@ -44,20 +46,21 @@
           <p>Oh, and animals. I love animals. Any animal. If there's a dog at a party, that's where I'll be.</p>
         </div>
 
-        <aside class="stat-card" aria-label="Character stats">
+        <aside class="stat-card reveal" aria-label="Character stats">
           <div class="stat-head">
             <span class="class-tag">Class: Data Scientist</span>
             <span class="lvl">LVL <b id="level">—</b></span>
           </div>
           <ul class="stats">
-            <li><span>STR</span><div class="bar"><i style="--v:92"></i></div><b>92</b></li>
-            <li><span>STAMINA</span><div class="bar"><i style="--v:88"></i></div><b>88</b></li>
-            <li><span>INT</span><div class="bar"><i style="--v:80"></i></div><b>80</b></li>
-            <li><span>ANIME LORE</span><div class="bar"><i style="--v:95"></i></div><b>95</b></li>
-            <li><span>ANIMAL LOVE</span><div class="bar"><i style="--v:100"></i></div><b>100</b></li>
-            <li class="low"><span>STUDY WILL</span><div class="bar"><i style="--v:6"></i></div><b>6</b></li>
+            <li><button class="stat-btn" type="button" data-v="92" aria-label="Train STR, currently 92"><span>STR</span><span class="bar"><i style="--v:92"></i></span><b>92</b></button></li>
+            <li><button class="stat-btn" type="button" data-v="88" aria-label="Train STAMINA, currently 88"><span>STAMINA</span><span class="bar"><i style="--v:88"></i></span><b>88</b></button></li>
+            <li><button class="stat-btn" type="button" data-v="80" aria-label="Train INT, currently 80"><span>INT</span><span class="bar"><i style="--v:80"></i></span><b>80</b></button></li>
+            <li><button class="stat-btn" type="button" data-v="95" aria-label="Train ANIME LORE, currently 95"><span>ANIME LORE</span><span class="bar"><i style="--v:95"></i></span><b>95</b></button></li>
+            <li><button class="stat-btn" type="button" data-v="100" aria-label="Train ANIMAL LOVE, currently 100"><span>ANIMAL LOVE</span><span class="bar"><i style="--v:100"></i></span><b>100</b></button></li>
+            <li><button class="stat-btn low" type="button" data-v="6" aria-label="Train STUDY WILL, currently 6"><span>STUDY WILL</span><span class="bar"><i style="--v:6"></i></span><b>6</b></button></li>
           </ul>
           <p class="stat-note">* Study will regenerates only during exam week.</p>
+          <p class="stat-hint">Tap a stat to train it.</p>
         </aside>
       </div>
     </section>
@@ -65,9 +68,9 @@
     <!-- PROJECTS: quest log -->
     <section id="quests" class="panel">
       <h2><span class="num">02</span> Quest log</h2>
-      <p class="section-sub">Projects I've built. Each one taught me more than any lecture did.</p>
+      <p class="section-sub reveal">Projects I've built. Each one taught me more than any lecture did.</p>
       <div class="quests">
-        <article class="quest">
+        <article class="quest reveal" style="--i:0">
           <div class="quest-top"><span class="rank">S-Rank</span><span class="status done">Cleared</span></div>
           <h3>RouteForge</h3>
           <p>A delivery route planner for small brands in Mumbai. Upload a CSV of stops and it finds the fastest order to drive them, using real road travel times from OpenStreetMap — then shows how much time you saved versus your original order.</p>
@@ -78,7 +81,7 @@
           </div>
         </article>
 
-        <article class="quest">
+        <article class="quest reveal" style="--i:1">
           <div class="quest-top"><span class="rank">A-Rank</span><span class="status done">Cleared</span></div>
           <h3>Solar Power Predictor</h3>
           <p>Predicts how much power a solar panel will produce from the weather — sunlight, temperature, humidity and cloud cover. Built with classical regression models (no neural nets) and a Streamlit dashboard to compare them.</p>
@@ -88,7 +91,7 @@
           </div>
         </article>
 
-        <article class="quest">
+        <article class="quest reveal" style="--i:2">
           <div class="quest-top"><span class="rank">B-Rank</span><span class="status active">In progress</span></div>
           <h3>NSE Paper-Trading Bot</h3>
           <p>An automated bot for Indian stocks that trades with paper money only. I tested momentum strategies and whether news filings predict price moves. Biggest lesson: most strategies that look great in backtests fall apart on new data — so it stays on paper.</p>
@@ -110,15 +113,16 @@
             <li>Next.js / React</li><li>HTML &amp; CSS</li><li>Git &amp; GitHub</li>
           </ul>
         </div>
-        <div>
+        <div class="reveal">
           <h3 class="inv-title">Side quests</h3>
           <div class="interests">
-            <button class="interest" data-msg="Any sport, any time. Just pick teams.">🏀 Sports</button>
-            <button class="interest" data-msg="Gym is non-negotiable. Leg day included (mostly).">🏋️ Working out</button>
-            <button class="interest" data-msg="Ask me for a recommendation — I have a list ready.">🍥 Anime</button>
-            <button class="interest" data-msg="Dogs, cats, anything with fur. I'll stop to say hi.">🐾 Animals</button>
+            <button class="interest" type="button" aria-pressed="false" data-msg="Any sport, any time. Just pick teams.">🏀 Sports</button>
+            <button class="interest" type="button" aria-pressed="false" data-msg="Gym is non-negotiable. Leg day included (mostly).">🏋️ Working out</button>
+            <button class="interest" type="button" aria-pressed="false" data-msg="Ask me for a recommendation — I have a list ready.">🍥 Anime</button>
+            <button class="interest" type="button" aria-pressed="false" data-msg="Dogs, cats, anything with fur. I'll stop to say hi.">🐾 Animals</button>
           </div>
-          <p class="interest-msg" id="interest-msg" aria-live="polite">Tap a side quest ↑</p>
+          <p class="interest-msg" id="interest-msg" aria-hidden="true">Tap a side quest ↑</p>
+          <p class="sr-only" id="interest-live" aria-live="polite"></p>
         </div>
       </div>
     </section>
@@ -126,9 +130,10 @@
     <!-- CONTACT -->
     <section id="contact" class="panel contact">
       <h2><span class="num">04</span> Send a party invite</h2>
-      <p class="section-sub">Want to build something, talk anime, or find a gym partner? Reach out.</p>
-      <div class="contact-links">
+      <p class="section-sub reveal">Want to build something, talk anime, or find a gym partner? Reach out.</p>
+      <div class="contact-links reveal">
         <a class="btn" href="mailto:tanushblabla1206@gmail.com">✉ tanushblabla1206@gmail.com</a>
+        <button class="btn ghost" type="button" data-copy="tanushblabla1206@gmail.com">Copy email</button>
         <a class="btn ghost" href="https://github.com/Tanush1212" target="_blank" rel="noopener">GitHub ↗</a>
       </div>
     </section>
@@ -136,8 +141,14 @@
 
   <footer>
     <p>© <span id="year"></span> Tanush Pillai · Built by hand with HTML, CSS &amp; JS · Save point reached.</p>
+    <p class="cheat-hint">Psst. Got a keyboard? Try ↑ ↑ ↓ ↓ ← → ← → B A</p>
   </footer>
 
-  <script src="script.js"></script>
+  <div class="boot" id="boot" aria-hidden="true">
+    <div class="boot-inner">Loading save file<div class="boot-bar"><i></i></div></div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js?v=5"></script>
 </body>
 </html>

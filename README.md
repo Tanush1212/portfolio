@@ -10,6 +10,14 @@ My personal portfolio website, designed like an RPG "player profile" screen — 
 - **Skills & interests** — technical skills plus sports, working out, anime and animals
 - **Contact** — email and GitHub
 
+## Interactive bits
+- "Press start" loads a save file before jumping to the status screen
+- Tap any stat to train it (STUDY WILL refuses, obviously)
+- Project cards tilt and light up under the cursor
+- Side quests reply in typed text
+- An XP bar fills as you scroll, and you level up at the end
+- Cheat code for keyboard users: ↑ ↑ ↓ ↓ ← → ← → B A
+
 ## Built with
 Plain HTML, CSS and JavaScript. No frameworks, no templates. Hosted for free on Vercel.
 
