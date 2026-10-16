@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tanush Pillai — Player Profile</title>
+  <meta name="description" content="Tanush Pillai: data science student, gym regular, sports guy, anime nerd and animal lover.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="logo" href="#top">TP<span>_</span></a>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#quests">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO: character select screen -->
+    <section class="hero">
+      <p class="eyebrow">Player 1 has entered the game</p>
+      <h1>Tanush<br><span>Pillai</span></h1>
+      <p class="tagline">Data science student by day. Gym rat by evening. Anime nerd by night.</p>
+      <div class="press-start">
+        <a class="btn" href="#about">Press start ▸</a>
+      </div>
+    </section>
+
+    <!-- ABOUT: status screen -->
+    <section id="about" class="panel">
+      <h2><span class="num">01</span> Status screen</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Hey, I'm Tanush. I study <strong>Data Science and AI</strong>, which mostly means I like turning messy data into something that actually works — route planners, prediction models, trading experiments.</p>
+          <p>Outside of code I'm basically always moving. I play sports whenever I can, and I'm honestly obsessed with working out — a day without the gym feels like a missed save point.</p>
+          <p>I also have a properly nerdy side. Anime is my thing, and you'll notice this whole site is built like an RPG status screen because of it.</p>
+          <p>And for the record: I <em>hate</em> studying. I love building things, though — which is why most of what I know came from making projects, not reading textbooks.</p>
+          <p>Oh, and animals. I love animals. Any animal. If there's a dog at a party, that's where I'll be.</p>
+        </div>
+
+        <aside class="stat-card" aria-label="Character stats">
+          <div class="stat-head">
+            <span class="class-tag">Class: Data Scientist</span>
+            <span class="lvl">LVL <b id="level">—</b></span>
+          </div>
+          <ul class="stats">
+            <li><span>STR</span><div class="bar"><i style="--v:92"></i></div><b>92</b></li>
+            <li><span>STAMINA</span><div class="bar"><i style="--v:88"></i></div><b>88</b></li>
+            <li><span>INT</span><div class="bar"><i style="--v:80"></i></div><b>80</b></li>
+            <li><span>ANIME LORE</span><div class="bar"><i style="--v:95"></i></div><b>95</b></li>
+            <li><span>ANIMAL LOVE</span><div class="bar"><i style="--v:100"></i></div><b>100</b></li>
+            <li class="low"><span>STUDY WILL</span><div class="bar"><i style="--v:6"></i></div><b>6</b></li>
+          </ul>
+          <p class="stat-note">* Study will regenerates only during exam week.</p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PROJECTS: quest log -->
+    <section id="quests" class="panel">
+      <h2><span class="num">02</span> Quest log</h2>
+      <p class="section-sub">Projects I've built. Each one taught me more than any lecture did.</p>
+      <div class="quests">
+        <article class="quest">
+          <div class="quest-top"><span class="rank">S-Rank</span><span class="status done">Cleared</span></div>
+          <h3>RouteForge</h3>
+          <p>A delivery route planner for small brands in Mumbai. Upload a CSV of stops and it finds the fastest order to drive them, using real road travel times from OpenStreetMap — then shows how much time you saved versus your original order.</p>
+          <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>MapLibre</li><li>OSRM</li></ul>
+          <div class="links">
+            <a href="https://routeforge-khaki.vercel.app" target="_blank" rel="noopener">Live site ↗</a>
+            <a href="https://github.com/Tanush1212/routeforge" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="quest">
+          <div class="quest-top"><span class="rank">A-Rank</span><span class="status done">Cleared</span></div>
+          <h3>Solar Power Predictor</h3>
+          <p>Predicts how much power a solar panel will produce from the weather — sunlight, temperature, humidity and cloud cover. Built with classical regression models (no neural nets) and a Streamlit dashboard to compare them.</p>
+          <ul class="tags"><li>Python</li><li>scikit-learn</li><li>Streamlit</li></ul>
+          <div class="links">
+            <a href="https://github.com/Tanush1212/solar-power-prediction" target="_blank" rel="noopener">Code ↗</a>
+          </div>
+        </article>
+
+        <article class="quest">
+          <div class="quest-top"><span class="rank">B-Rank</span><span class="status active">In progress</span></div>
+          <h3>NSE Paper-Trading Bot</h3>
+          <p>An automated bot for Indian stocks that trades with paper money only. I tested momentum strategies and whether news filings predict price moves. Biggest lesson: most strategies that look great in backtests fall apart on new data — so it stays on paper.</p>
+          <ul class="tags"><li>Python</li><li>pandas</li><li>Backtesting</li></ul>
+          <div class="links"><span class="private">Private repo</span></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- SKILLS & INTERESTS: inventory -->
+    <section id="skills" class="panel">
+      <h2><span class="num">03</span> Skills &amp; interests</h2>
+      <div class="inv-grid">
+        <div>
+          <h3 class="inv-title">Abilities</h3>
+          <ul class="chips">
+            <li>Python</li><li>pandas</li><li>scikit-learn</li><li>Machine learning</li>
+            <li>Data visualisation</li><li>Streamlit</li><li>JavaScript</li><li>TypeScript</li>
+            <li>Next.js / React</li><li>HTML &amp; CSS</li><li>Git &amp; GitHub</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="inv-title">Side quests</h3>
+          <div class="interests">
+            <button class="interest" data-msg="Any sport, any time. Just pick teams.">🏀 Sports</button>
+            <button class="interest" data-msg="Gym is non-negotiable. Leg day included (mostly).">🏋️ Working out</button>
+            <button class="interest" data-msg="Ask me for a recommendation — I have a list ready.">🍥 Anime</button>
+            <button class="interest" data-msg="Dogs, cats, anything with fur. I'll stop to say hi.">🐾 Animals</button>
+          </div>
+          <p class="interest-msg" id="interest-msg" aria-live="polite">Tap a side quest ↑</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="panel contact">
+      <h2><span class="num">04</span> Send a party invite</h2>
+      <p class="section-sub">Want to build something, talk anime, or find a gym partner? Reach out.</p>
+      <div class="contact-links">
+        <a class="btn" href="mailto:grow.piramal@gmail.com">✉ grow.piramal@gmail.com</a>
+        <a class="btn ghost" href="https://github.com/Tanush1212" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span id="year"></span> Tanush Pillai · Built by hand with HTML, CSS &amp; JS · Save point reached.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
