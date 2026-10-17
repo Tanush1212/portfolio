@@ -22,6 +22,7 @@ My personal portfolio website, designed like an RPG "player profile" screen — 
 Plain HTML, CSS and JavaScript. No frameworks, no templates. Hosted for free on Vercel.
 
 ## Credits
+- Background art: an original image I generated with Gamma's AI image tool, inspired by the Demon's Castle from *Solo Leveling* (a fan tribute, not official artwork). Scrolling the page climbs the castle from the gate to the throne.
 - Fonts: [Chakra Petch](https://fonts.google.com/specimen/Chakra+Petch) and [IBM Plex Sans](https://fonts.google.com/specimen/IBM+Plex+Sans) from Google Fonts (Open Font License).
 - Written with help from an AI coding assistant (Claude), as allowed by the assignment guidelines. Content and ideas are my own.
 

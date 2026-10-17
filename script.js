@@ -360,3 +360,55 @@ if (hasIO) {
   }, { rootMargin: "-45% 0px -50% 0px" });
   $$("main section[id]").forEach((s) => io.observe(s));
 }
+
+// ---------- background embers rising from the castle ----------
+const emberCanvas = $(".embers");
+if (emberCanvas && emberCanvas.getContext && !reduceMotion) {
+  const ectx = emberCanvas.getContext("2d");
+  const tones = ["#ff6b35", "#ff8a4c", "#ff4d3a", "#ffb067"];
+  let ew = 0, eh = 0, embers = [], emberRunning = true;
+
+  const spawn = (anywhere) => ({
+    x: Math.random() * ew,
+    y: anywhere ? Math.random() * eh : eh + 10,
+    r: 0.6 + Math.random() * 1.6,
+    vy: 0.25 + Math.random() * 0.6,
+    drift: Math.random() * Math.PI * 2,
+    life: 0.4 + Math.random() * 0.6,
+    c: tones[Math.floor(Math.random() * tones.length)],
+  });
+  const sizeEmbers = () => {
+    const dpr = Math.min(1.5, window.devicePixelRatio || 1);
+    ew = innerWidth; eh = innerHeight;
+    emberCanvas.width = ew * dpr; emberCanvas.height = eh * dpr;
+    ectx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    const count = Math.round(Math.min(55, (ew * eh) / 26000));
+    embers = Array.from({ length: count }, () => spawn(true));
+  };
+  sizeEmbers();
+  addEventListener("resize", sizeEmbers);
+
+  const drawEmbers = () => {
+    if (!emberRunning) return;
+    ectx.clearRect(0, 0, ew, eh);
+    for (let i = 0; i < embers.length; i++) {
+      const e = embers[i];
+      e.y -= e.vy;
+      e.drift += 0.02;
+      e.x += Math.sin(e.drift) * 0.35;
+      if (e.y < -10) embers[i] = spawn(false);
+      ectx.globalAlpha = e.life * (0.55 + 0.45 * Math.sin(e.drift * 3));
+      ectx.fillStyle = e.c;
+      ectx.beginPath();
+      ectx.arc(e.x, e.y, e.r, 0, Math.PI * 2);
+      ectx.fill();
+    }
+    requestAnimationFrame(drawEmbers);
+  };
+  requestAnimationFrame(drawEmbers);
+  document.addEventListener("visibilitychange", () => {
+    const visible = !document.hidden;
+    if (visible && !emberRunning) { emberRunning = true; requestAnimationFrame(drawEmbers); }
+    emberRunning = visible;
+  });
+}

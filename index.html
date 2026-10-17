@@ -8,9 +8,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=7">
 </head>
 <body>
+  <!-- Background: the Demon's Castle. Scrolling the page climbs the tower from the gate to the throne. -->
+  <div class="castle" aria-hidden="true">
+    <div class="castle-glow"></div>
+    <img class="castle-art" src="assets/demon-castle-1536.jpg"
+         srcset="assets/demon-castle-900.jpg 900w, assets/demon-castle-1536.jpg 1536w"
+         sizes="95vh" alt="" decoding="async" width="1536" height="2752">
+    <div class="castle-shade"></div>
+    <canvas class="embers"></canvas>
+  </div>
   <header class="topbar">
     <a class="logo" href="#top">TP<span>_</span></a>
     <nav>
@@ -149,6 +158,6 @@
   </div>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>
